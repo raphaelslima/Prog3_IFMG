@@ -1,0 +1,38 @@
+git -v
+git init
+git status
+git commit -a -m "nome_do_commit"
+git push -u origin Main
+//------------------------------------------------------------------------------
+//git checkout -b "nome do branch"
+//
+//------------------------------------------------------------------------------ 
+//importante comentar que esse comando serve para criar uma nova branch em que 
+//para que os codigos nao se conflitem.
+// 
+//git checkout nome_do_branch
+//
+//altera o metodo atual para outro existente
+//
+//------------------------------------------------------------------------------
+git push --set upstream origin teste
+clean
+git merge nome_do_branch
+//
+//------------------------------------------------------------------------------
+git pull
+//
+//------------------------------------------------------------------------------
+//esse comando pega todas as atualizacoes do repositorio remoto e coloca no local
+//
+//------------------------------------------------------------------------------
+//git clean -f
+//
+//------------------------------------------------------------------------------
+// limpa/elimina um arquivo inteiro
+//
+//------------------------------------------------------------------------------
+//git checkout .\NomedoArquivo
+//
+//------------------------------------------------------------------------------
+//desfaz a ultima implementacao do codigo
