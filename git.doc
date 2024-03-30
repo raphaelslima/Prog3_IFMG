@@ -1,38 +1,79 @@
-git -v
-git init
-git status
-git commit -a -m "nome_do_commit"
-git push -u origin Main
-//------------------------------------------------------------------------------
+//git -v
+//git init
+//git status
+//git commit -a -m "nome_do_commit"
+//git push -u origin Main
+//-------------------------------------------------------------------------------
 //git checkout -b "nome do branch"
 //
-//------------------------------------------------------------------------------ 
+//-------------------------------------------------------------------------------
 //importante comentar que esse comando serve para criar uma nova branch em que 
 //para que os codigos nao se conflitem.
 // 
 //git checkout nome_do_branch
 //
-//altera o metodo atual para outro existente
+//altera o branch atual para outro existente
 //
-//------------------------------------------------------------------------------
-git push --set upstream origin teste
-clean
-git merge nome_do_branch
+//-------------------------------------------------------------------------------
+//git push --set upstream origin teste
+//clean
+//git merge nome_do_branch
 //
-//------------------------------------------------------------------------------
-git pull
+//-------------------------------------------------------------------------------
+//git pull
 //
-//------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------
 //esse comando pega todas as atualizacoes do repositorio remoto e coloca no local
 //
-//------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------
 //git clean -f
 //
-//------------------------------------------------------------------------------
-// limpa/elimina um arquivo inteiro
+//-------------------------------------------------------------------------------
+//limpa/elimina um arquivo inteiro
 //
-//------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------
 //git checkout .\NomedoArquivo
 //
-//------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------
 //desfaz a ultima implementacao do codigo
+//
+//-------------------------------------------------------------------------------
+//ssh-keygen -t ed25519 -C "SEU EMAIL AQUI"
+//
+//-------------------------------------------------------------------------------
+//gera um codigo ssd que fica armazenado no seu dispositivo que devera ser 
+//informado no repositorio remoto no GitHub
+//***Voce podera escolher qual pasta alocar esse codigo gerado, mas e recomendado
+//***apenas clicar na tecla enter para cada comando requisitado***
+//
+//-------------------------------------------------------------------------------
+//Para listar os repositorios remotos associados ao seu projeto local, voce pode 
+//utilizar o comando
+// git remote -v
+//
+//-------------------------------------------------------------------------------
+//Caso voce nao precise mais de um repositorio remoto especifico, pode remove-lo
+//com o comando
+//***git remote remove nome_do_repositorio***
+//
+//As vezes, e necessario atualizar a URL de um repositorio remoto, como quando 
+//a URL do servidor do GitHub e modificada ou quando voce copiou a URL incorreta 
+//ao adicionar o repositorio remoto. Use o comando git remote set-url apelido 
+//nova_url para realizar essa atualizacao. Substitua 'apelido' pelo nome do 
+//repositorio remoto e 'nova_url' pela nova URL que voce deseja associar a ele. 
+//Aqui esta um exemplo:
+//
+//git remote set-url origin https://github.com/seu-usuario/seu-repositorio.git
+//
+//--------------------------------------------------------------------------------
+//Se voce deseja renomear um repositorio remoto, use o comando git remote rename
+//apelido novo_apelido. Substitua 'apelido' pelo nome atual do repositorio remoto
+//e'novo_apelido' pelo novo nome que voce deseja atribuir a ele.
+//Aqui esta um exemplo
+//git remote rename origin novo-origin
+//Isso renomeará o repositório remoto de "origin" para "novo-origin".
+//
+//Lembre-se de que o comando git remote é fundamental para a gestão de conexões
+//entre seu repositório local e repositórios remotos, permitindo a colaboração 
+//eficiente e o controle de versão. 
+//-------------------------------------------------------------------------------
