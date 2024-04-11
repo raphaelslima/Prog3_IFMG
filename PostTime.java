@@ -33,7 +33,7 @@ public class PostTime {
         return postMes;
     }
 
-    // imprima tudo
+    // imprima tudo!
     public void imprimeTudo() {
         System.out.println("Hora da postagem: " + postHora);
         System.out.println("Semana da postagem: " + postSemana);
