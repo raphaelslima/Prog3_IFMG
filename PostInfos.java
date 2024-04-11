@@ -74,7 +74,7 @@ public class PostInfos {
         this.ehPago = ehPago;
     }
 
-    // imprima tudo
+    // imprima tudo!
     public void imprimeTudo() {
         System.out.println("Likes Totais: " + likesTotais);
         System.out.println("Quantidade de interações: " + qtdeInteracao);
