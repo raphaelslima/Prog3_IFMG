@@ -83,4 +83,16 @@ public class PostLifetime {
     public void setEngajadosLike(long engajadosLike) {
         this.engajadosLike = engajadosLike;
     }
+
+    // imprime tudo;
+    public void imprimeTudo() {
+        System.out.println("Alcance total: " + totalAlcance);
+        System.out.println("Impressões totais: " + totalImpressoes);
+        System.out.println("Quantidade de usuários engajados: " + engajadosUsuarios);
+        System.out.println("Total de clientes: " + clientes);
+        System.out.println("Total de consumo: " + consumo);
+        System.out.println("Impressões por likes: " + impressoesPorLike);
+        System.out.println("Alcance por likes: " + alcancePorLike);
+        System.out.println("Total de engajados e com likes: " + engajadosLike);
+    }
 }
