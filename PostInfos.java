@@ -74,15 +74,15 @@ public class PostInfos {
         this.ehPago = ehPago;
     }
 
-    // imprima tudo!
+    // imprima tudo
     public void imprimeTudo() {
-        System.out.println("Likes Totais: " + likesTotais);
-        System.out.println("Quantidade de interações: " + qtdeInteracao);
-        System.out.println("Tipo de post: " + tipo);
-        System.out.println("Categoria: " + categoria);
-        System.out.println("Quantidade de comentários: " + comentarios);
-        System.out.println("Quantidade de compartilhamentos: " + compartilhamentos);
-        System.out.println("O post é monetizado? 1 para sim 0 para não: " + ehPago);
+        System.out.println("Likes Totais: " + this.likesTotais);
+        System.out.println("Quantidade de interações: " + this.qtdeInteracao);
+        System.out.println("Tipo de post: " + this.tipo);
+        System.out.println("Categoria: " + this.categoria);
+        System.out.println("Quantidade de comentários: " + this.comentarios);
+        System.out.println("Quantidade de compartilhamentos: " + this.compartilhamentos);
+        System.out.println("O post é monetizado? 1 para sim 0 para não: " + this.ehPago);
     }
 
 }

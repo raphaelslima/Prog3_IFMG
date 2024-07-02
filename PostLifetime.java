@@ -88,7 +88,7 @@ public class PostLifetime {
 
     // imprime tudo;
     /**
-     * como que resolve conflitos???
+     * como que resolve conflitos
      */
     public void imprimeTudo() {
         System.out.println("Impressões totais: " + totalImpressoes);
