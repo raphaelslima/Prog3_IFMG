@@ -1,23 +1,39 @@
 public class No<T> {
-    private T elemento;
+    private T tweetID;
+    private T handLabel;
+    private T AnnotatorID;
     private No<T> proximo;
 
-    public No(T elemento) {
-        this.elemento = elemento;
+    public No(T tweetID, T handLabel, T AnnotatorID) {
+        this.tweetID = tweetID;
+        this.handLabel = handLabel;
+        this.AnnotatorID = AnnotatorID;
         this.proximo = null;
     }
 
-    public No(T elemento, No<T> proximo) {
-        this.elemento = elemento;
+    public No(T tweetID, T handLabel, T AnnotatorID, No<T> proximo) {
+        this.tweetID = tweetID;
+        this.handLabel = handLabel;
+        this.AnnotatorID = AnnotatorID;
         this.proximo = proximo;
     }
 
-    public T getElemento() {
-        return elemento;
+    public T getTweetID() {
+        return tweetID;
     }
 
-    public void setElemento(T elemento) {
-        this.elemento = elemento;
+    public T getHandLabel() {
+        return tweetID;
+    }
+
+    public T getAnnotatorID() {
+        return tweetID;
+    }
+
+    public void setElemento(T tweetID, T handLabel, T AnnotatorID) {
+        this.tweetID = tweetID;
+        this.handLabel = handLabel;
+        this.AnnotatorID = AnnotatorID;
     }
 
     public No<T> getProximo() {
@@ -30,7 +46,7 @@ public class No<T> {
 
     @Override
     public String toString() {
-        return "No [elemento=" + elemento + ", proximo=" + proximo + "]";
+        return "No [elemento=" + tweetID + ", proximo=" + proximo + "]";
     }
 
     

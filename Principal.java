@@ -60,14 +60,27 @@ class Principal {
         }*/
 
         //TP2
-        String arquivo = "./datasetTwitters/Portuguese_Twitter_sentiment.csv";
+        String arquivo = "./datasetTwitters/teste.csv";
+        boolean pular1Linha = true;
         try (Scanner scanner = new Scanner(new File(arquivo))) {
             scanner.useDelimiter(",");
+            ListaEncadeada listaPT = new ListaEncadeada<>();
             while (scanner.hasNextLine()) {
                 String linha = scanner.nextLine();
-                System.out.println(linha);
-                
+                if (!pular1Linha) {
+                    int primeiraVirgula = linha.indexOf(',');
+                    int segundaVirgula = linha.indexOf(',', primeiraVirgula + 1);
+        
+                    String tweetID = linha.substring(0, primeiraVirgula);
+                    String handLabel = linha.substring(primeiraVirgula + 1, segundaVirgula);
+                    String AnnotatorID = linha.substring(segundaVirgula + 1);
+
+                    listaPT.adicionar(tweetID, handLabel, AnnotatorID);
+                }else{
+                    pular1Linha = false;
                 }
+                }
+                listaPT.percorreLista();
         } catch (Exception e) {
             e.printStackTrace();
         }

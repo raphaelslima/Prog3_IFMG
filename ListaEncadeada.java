@@ -3,8 +3,8 @@ public class ListaEncadeada<T> {
     private No<T> ultimo;
     private int tamanho = 0;
 
-    public void adicionar(T elemento){
-        No<T> celula = new No(elemento);
+    public void adicionar(T tweetID, T handLabel, T AnnotatorID){
+        No<T> celula = new No(tweetID, handLabel, AnnotatorID);
         if(this.tamanho == 0){
             this.inicio = celula;
         }else{
@@ -14,24 +14,24 @@ public class ListaEncadeada<T> {
         this.tamanho++;   
     }
 
-    public void adicionar(int pos, T elemento){
+    public void adicionar(int pos, T tweetID, T handLabel, T AnnotatorID){
         if(pos == 0){
             if(pos == this.tamanho){
-                this.adicionar(elemento);
+                this.adicionar(tweetID, handLabel, AnnotatorID);
             } else {
-                No<T> novoNo = new No(elemento, this.inicio);
+                No<T> novoNo = new No(tweetID, handLabel, AnnotatorID, this.inicio);
                 this.inicio = novoNo;
                 this.tamanho++;
             }
         } else if(pos == this.tamanho){
-            this.adicionar(elemento);
+            this.adicionar(tweetID, handLabel, AnnotatorID);
         } else if(pos > this.tamanho || pos < 0){
             throw new IllegalArgumentException("Posição inválida");
         } else{
            No<T> noAnterior = this.buscaNo(pos-1);
            No<T> noProximo = noAnterior.getProximo();
 
-           No<T> novoNo = new No<T>(elemento, noProximo);
+           No<T> novoNo = new No<T>(tweetID, handLabel, AnnotatorID, noProximo);
            noAnterior.setProximo(novoNo);
            this.tamanho++;
         }
@@ -49,10 +49,10 @@ public class ListaEncadeada<T> {
         No<T> atual = this.inicio;
 
         if(atual.getProximo() == null){
-            System.out.println(atual.getElemento());
+            System.out.println(atual.getTweetID());
         }else{
             for(int i = 0; i<this.tamanho; i++){
-                System.out.println(atual.getElemento());
+                System.out.println(atual.getTweetID());
                 atual = atual.getProximo();
             }
         }      
@@ -62,7 +62,7 @@ public class ListaEncadeada<T> {
         No<T> atual = this.inicio;
         for(int i = 0; i < this.tamanho; i++){
             No <T> proximo = atual.getProximo();
-            atual.setElemento(null);
+            atual.setElemento(null, null, null);
             atual.setProximo(null);
             atual = proximo;
         }
@@ -85,16 +85,16 @@ public class ListaEncadeada<T> {
     }
 
     public T buscaPorPosicao(int posicao){
-        return this.buscaNo(posicao).getElemento();
+        return this.buscaNo(posicao).getTweetID();
     }
 
-    public int busca(T elemento){
+    public int busca(T tweetID){
         No<T> atual = this.inicio;
         int pos = 0;
 
         for(int i = 0; i < this.tamanho; i++){
 
-            if(atual.getElemento().equals(elemento)){
+            if(atual.getTweetID().equals(tweetID)){
                 return pos;
             }
 
@@ -109,7 +109,7 @@ public class ListaEncadeada<T> {
         if(this.tamanho == 0){
             throw new RuntimeException("Lista vazia");
         } else {
-            T removido = this.inicio.getElemento();
+            T removido = this.inicio.getTweetID();
             this.inicio = this.inicio.getProximo();
             this.tamanho--;
 
@@ -129,7 +129,7 @@ public class ListaEncadeada<T> {
         }
 
         No<T> noAnterior = this.buscaNo(this.tamanho -2);
-        T removido = noAnterior.getProximo().getElemento();
+        T removido = noAnterior.getProximo().getTweetID();
         noAnterior.setProximo(null);
         this.ultimo = noAnterior;
         this.tamanho--;
@@ -150,7 +150,7 @@ public class ListaEncadeada<T> {
             noAnterior.setProximo(noAtual.getProximo());
             noAtual.setProximo(null);
             this.tamanho--;
-            return noAtual.getElemento();
+            return noAtual.getTweetID();
         }
     }
 
