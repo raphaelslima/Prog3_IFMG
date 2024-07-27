@@ -60,30 +60,24 @@ class Principal {
         }*/
 
         //TP2
-        String arquivo = "./datasetTwitters/teste.csv";
-        boolean pular1Linha = true;
-        try (Scanner scanner = new Scanner(new File(arquivo))) {
-            scanner.useDelimiter(",");
-            ListaEncadeada listaPT = new ListaEncadeada<>();
-            while (scanner.hasNextLine()) {
-                String linha = scanner.nextLine();
-                if (!pular1Linha) {
-                    int primeiraVirgula = linha.indexOf(',');
-                    int segundaVirgula = linha.indexOf(',', primeiraVirgula + 1);
-        
-                    String tweetID = linha.substring(0, primeiraVirgula);
-                    String handLabel = linha.substring(primeiraVirgula + 1, segundaVirgula);
-                    String AnnotatorID = linha.substring(segundaVirgula + 1);
-
-                    listaPT.adicionar(tweetID, handLabel, AnnotatorID);
-                }else{
-                    pular1Linha = false;
-                }
-                }
-                listaPT.percorreLista();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        ListaEncadeada listaTeste = new ListaEncadeada<>();
+        ListaEncadeada listaAlba = new ListaEncadeada<>();
+        ListaEncadeada listaBosn = new ListaEncadeada<>();
+        ListaEncadeada listaCroa = new ListaEncadeada<>();
+        ListaEncadeada listaEngl = new ListaEncadeada<>();
+        ListaEncadeada listaGerm = new ListaEncadeada<>();
+        ListaEncadeada listaHung = new ListaEncadeada<>();
+        ListaEncadeada listaPoli = new ListaEncadeada<>();
+        ListaEncadeada listaPort = new ListaEncadeada<>();
+        ListaEncadeada listaRuss = new ListaEncadeada<>();
+        ListaEncadeada listaSerb = new ListaEncadeada<>();
+        ListaEncadeada listaSlovak = new ListaEncadeada<>();
+        ListaEncadeada listaSlovenian = new ListaEncadeada<>();
+        ListaEncadeada listaSpan = new ListaEncadeada<>();
+        ListaEncadeada listaSwed = new ListaEncadeada<>();
+        String arquivoTeste = "./datasetTwitters/teste.csv";
+        listaTeste.tranformaArquivoParaLista(arquivoTeste, listaTeste);
+        listaTeste.percorreLista();
     }
 
 }

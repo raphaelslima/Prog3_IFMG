@@ -1,52 +1,47 @@
-public class No<T> {
-    private T tweetID;
-    private T handLabel;
-    private T AnnotatorID;
-    private No<T> proximo;
+public class No<String> {
+    private String tweetID;
+    private String handLabel;
+    private String AnnotatorID;
+    private No<String> proximo;
 
-    public No(T tweetID, T handLabel, T AnnotatorID) {
+    public No(String tweetID, String handLabel, String AnnotatorID) {
         this.tweetID = tweetID;
         this.handLabel = handLabel;
         this.AnnotatorID = AnnotatorID;
         this.proximo = null;
     }
 
-    public No(T tweetID, T handLabel, T AnnotatorID, No<T> proximo) {
+    public No(String tweetID, String handLabel, String AnnotatorID, No<String> proximo) {
         this.tweetID = tweetID;
         this.handLabel = handLabel;
         this.AnnotatorID = AnnotatorID;
         this.proximo = proximo;
     }
 
-    public T getTweetID() {
+    public String getTweetID() {
         return tweetID;
     }
 
-    public T getHandLabel() {
+    public String getHandLabel() {
         return tweetID;
     }
 
-    public T getAnnotatorID() {
+    public String getAnnotatorID() {
         return tweetID;
     }
 
-    public void setElemento(T tweetID, T handLabel, T AnnotatorID) {
+    public void setElemento(String tweetID, String handLabel, String AnnotatorID) {
         this.tweetID = tweetID;
         this.handLabel = handLabel;
         this.AnnotatorID = AnnotatorID;
     }
 
-    public No<T> getProximo() {
+    public No<String> getProximo() {
         return proximo;
     }
 
-    public void setProximo(No<T> proximo) {
+    public void setProximo(No<String> proximo) {
         this.proximo = proximo;
-    }
-
-    @Override
-    public String toString() {
-        return "No [elemento=" + tweetID + ", proximo=" + proximo + "]";
     }
 
     

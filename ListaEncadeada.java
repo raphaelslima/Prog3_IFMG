@@ -1,9 +1,12 @@
+import java.io.File;
+import java.util.Scanner;
+
 public class ListaEncadeada<T> {
     private No<T> inicio;
     private No<T> ultimo;
     private int tamanho = 0;
 
-    public void adicionar(T tweetID, T handLabel, T AnnotatorID){
+    public void adicionar(String tweetID, String handLabel, String AnnotatorID){
         No<T> celula = new No(tweetID, handLabel, AnnotatorID);
         if(this.tamanho == 0){
             this.inicio = celula;
@@ -14,7 +17,7 @@ public class ListaEncadeada<T> {
         this.tamanho++;   
     }
 
-    public void adicionar(int pos, T tweetID, T handLabel, T AnnotatorID){
+    public void adicionar(int pos, String tweetID, String handLabel, String AnnotatorID){
         if(pos == 0){
             if(pos == this.tamanho){
                 this.adicionar(tweetID, handLabel, AnnotatorID);
@@ -31,7 +34,7 @@ public class ListaEncadeada<T> {
            No<T> noAnterior = this.buscaNo(pos-1);
            No<T> noProximo = noAnterior.getProximo();
 
-           No<T> novoNo = new No<T>(tweetID, handLabel, AnnotatorID, noProximo);
+           No<T> novoNo = new No(tweetID, handLabel, AnnotatorID, noProximo);
            noAnterior.setProximo(novoNo);
            this.tamanho++;
         }
@@ -154,9 +157,28 @@ public class ListaEncadeada<T> {
         }
     }
 
-    @Override
-    public String toString() {
-        return "listaEncadeada [inicio=" + inicio + "]";
+    public void tranformaArquivoParaLista(String file, ListaEncadeada<T> ListaEncadeada){
+        boolean pular1Linha = true;
+        try (Scanner scanner = new Scanner(new File(file))) {
+            scanner.useDelimiter(",");
+            while (scanner.hasNextLine()) {
+                String linha = scanner.nextLine();
+                if (!pular1Linha) {
+                    int primeiraVirgula = linha.indexOf(',');
+                    int segundaVirgula = linha.indexOf(',', primeiraVirgula + 1);
+        
+                    String tweetID = linha.substring(0, primeiraVirgula);
+                    String handLabel = linha.substring(primeiraVirgula + 1, segundaVirgula);
+                    String AnnotatorID = linha.substring(segundaVirgula + 1);
+
+                    ListaEncadeada.adicionar(tweetID, handLabel, AnnotatorID);
+                }else{
+                    pular1Linha = false;
+                }
+                }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
 
