@@ -6,12 +6,15 @@ A fim de solucionar o problema em relação à leitura de tweets em arquivos CSV
 O nosso  trabalho busca encontrar as possiveis soluções para estes problemas: 
 
 1) Qual o volume de tweets para cada idioma?
+
 2) Qual o volume total de tweets positivos? E qual o volume total de tweets negativos?
+
 3) Qual o idioma com mais tweets negativos? Qual o idioma com mais tweets positivos? É
 possível fazer um ranking dos idiomas?
+
 4) Algum tweeter teve registro em mais de um idioma? Qual, quais e/ou quantos?
 
-
+-------------------------------------------------------------------------
 ## Autores
 
 - Raphael Abade
@@ -20,11 +23,7 @@ possível fazer um ranking dos idiomas?
 - Pedro Henrique de Ávila
 - Celio
 
-
-## Referência
-
--
-
+-------------------------------------------------------------------------
 
 ## Contribuindo
 
