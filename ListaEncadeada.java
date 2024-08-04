@@ -1,42 +1,53 @@
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class ListaEncadeada<T> {
     private No<T> inicio;
     private No<T> ultimo;
     private int tamanho = 0;
+    Celula<String> firstCell;
 
-    public void adicionar(String tweetID, String handLabel, String AnnotatorID){
-        No<T> celula = new No(tweetID, handLabel, AnnotatorID);
-        if(this.tamanho == 0){
-            this.inicio = celula;
-        }else{
-            this.ultimo.setProximo(celula);;
-        }
-        this.ultimo = celula;
-        this.tamanho++;   
+    public ListaEncadeada() {
+        this.firstCell = null;
+
     }
 
-    public void adicionar(int pos, String tweetID, String handLabel, String AnnotatorID){
-        if(pos == 0){
-            if(pos == this.tamanho){
+    public void adicionar(String tweetID, String handLabel, String AnnotatorID) {
+        No<T> celula = new No(tweetID, handLabel, AnnotatorID);
+        if (this.tamanho == 0) {
+            this.inicio = celula;
+        } else {
+            this.ultimo.setProximo(celula);
+            ;
+        }
+        this.ultimo = celula;
+        this.tamanho++;
+    }
+
+    public void adicionar(int pos, String tweetID, String handLabel, String AnnotatorID) {
+        if (pos == 0) {
+            if (pos == this.tamanho) {
                 this.adicionar(tweetID, handLabel, AnnotatorID);
             } else {
                 No<T> novoNo = new No(tweetID, handLabel, AnnotatorID, this.inicio);
                 this.inicio = novoNo;
                 this.tamanho++;
             }
-        } else if(pos == this.tamanho){
+        } else if (pos == this.tamanho) {
             this.adicionar(tweetID, handLabel, AnnotatorID);
-        } else if(pos > this.tamanho || pos < 0){
+        } else if (pos > this.tamanho || pos < 0) {
             throw new IllegalArgumentException("Posição inválida");
-        } else{
-           No<T> noAnterior = this.buscaNo(pos-1);
-           No<T> noProximo = noAnterior.getProximo();
+        } else {
+            No<T> noAnterior = this.buscaNo(pos - 1);
+            No<T> noProximo = noAnterior.getProximo();
 
-           No<T> novoNo = new No(tweetID, handLabel, AnnotatorID, noProximo);
-           noAnterior.setProximo(novoNo);
-           this.tamanho++;
+            No<T> novoNo = new No(tweetID, handLabel, AnnotatorID, noProximo);
+            noAnterior.setProximo(novoNo);
+            this.tamanho++;
         }
     }
 
@@ -180,5 +191,100 @@ public class ListaEncadeada<T> {
             e.printStackTrace();
         }
     }
-}
 
+    public boolean empty() {
+        return (firstCell == null);
+    }
+
+    public void insertAtMiddle(String linguagem, int contadorPos) {
+        Celula<String> celula = new Celula<>(linguagem, contadorPos);
+        if (empty() || firstCell.contadorPos < contadorPos) {
+            celula.prox = firstCell;
+            firstCell = celula;
+        } else {
+            Celula<String> atual = firstCell;
+            while (atual.prox != null && atual.prox.contadorPos >= contadorPos) {
+                atual = atual.prox;
+            }
+            celula.prox = atual.prox;
+            atual.prox = celula;
+        }
+    }
+
+    public void printer() {
+        Celula<String> aux = firstCell;
+        while (aux != null) {
+            System.out.println("Idioma: " + aux.linguagem + " " + aux.contadorPos);
+            aux = aux.prox;
+        }
+    }
+
+    public void sentimento() {
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
+        String idiomaPositivo = null;
+        String idiomaNegativo = null;
+        int contadorTotalPos = 0;
+        int contadorTotalNeg = 0;
+
+        String caminho = "./languages";
+        File diretorio = new File(caminho);
+        File arquivos[] = diretorio.listFiles();
+
+        if (arquivos == null) {
+            System.out.println("Arquivo não encontrado");
+        }
+
+        for (File caminhoCSV : arquivos) {
+            String listaArquivo = caminhoCSV.getName();
+            int contador = 0;
+            int contadorNeg = 0;
+            boolean pular1linha = true;
+
+            try (BufferedReader br = new BufferedReader(new FileReader(caminhoCSV.getAbsolutePath()))) {
+                String linha;
+
+                while ((linha = br.readLine()) != null) {
+                    if (pular1linha) {
+                        pular1linha = false;
+                        continue;
+                    }
+                    String partes[] = linha.split(",");
+                    if (partes.length >= 3) {
+                        if (partes[1].equals("Positive")) {
+                            contador += 1;
+                            contadorTotalPos++;
+                            this.adicionar(caminhoCSV.getName(), partes[1], partes[2]);
+                        } else if (partes[1].equals("Negative")) {
+                            contadorNeg += 1;
+                            contadorTotalNeg++;
+                            this.adicionar(caminhoCSV.getName(), partes[1], partes[2]);
+                        }
+                    }
+                }
+
+                if (contador > max) {
+                    max = contador;
+                    idiomaPositivo = caminhoCSV.getName();
+                }
+
+                if (contadorNeg < min) {
+                    min = contadorNeg;
+                    idiomaNegativo = caminhoCSV.getName();
+                }
+                insertAtMiddle(listaArquivo, (contador));
+                insertAtMiddle(listaArquivo, contadorNeg);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+
+        System.out.println("O idioma mais positivo é: " + idiomaPositivo + ", com " + max);
+        System.out.println("O idioma menos positivo é: " + idiomaNegativo + ", com " + min);
+        System.out.println("Twitters positivos totais: " + contadorTotalPos);
+        System.out.println("Twitters negativos totais: " + contadorTotalNeg);
+        printer();
+    }
+}

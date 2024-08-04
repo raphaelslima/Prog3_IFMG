@@ -75,9 +75,63 @@ class Principal {
         ListaEncadeada listaSlovenian = new ListaEncadeada<>();
         ListaEncadeada listaSpan = new ListaEncadeada<>();
         ListaEncadeada listaSwed = new ListaEncadeada<>();
-        String arquivoTeste = "./datasetTwitters/teste.csv";
-        listaTeste.tranformaArquivoParaLista(arquivoTeste, listaTeste);
-        listaTeste.percorreLista();
+        
+        //Chama os arquivos
+        String arquivoAlba = "./datasetTwitters/Albanian_Twitter_Sentiment.csv";
+        String arquivoBosn = "./datasetTwitters/Bosnian_Twitter_Sentiment.csv";
+        String arquivoCroa = "./datasetTwitters/Croatian_Twitter_Sentiment.csv";
+        String arquivoEngl = "./datasetTwitters/English_Twitter_Sentiment.csv";
+        String arquivoGerm = "./datasetTwitters/German_Twitter_Sentiment.csv";
+        String arquivoHung = "./datasetTwitters/Hungarian_Twitter_Sentiment.csv";
+        String arquivoPoli = "./datasetTwitters/Polish_Twitter_Sentiment.csv";
+        String arquivoPort = "./datasetTwitters/Portuguese_Twitter_Sentiment.csv";
+        String arquivoRuss = "./datasetTwitters/Russian_Twitter_Sentiment.csv";
+        String arquivoSerb = "./datasetTwitters/Serbian_Twitter_Sentiment.csv";
+        String arquivoSlovak = "./datasetTwitters/Slovak_Twitter_Sentiment.csv";
+        String arquivoSlovenian = "./datasetTwitters/Slovenian_Twitter_Sentiment.csv";
+        String arquivoSpan = "./datasetTwitters/Spanish_Twitter_Sentiment.csv";
+        String arquivoSwed = "./datasetTwitters/Swedish_Twitter_Sentiment.csv";
+
+        System.out.println("--------------------Questão 1-------------------------------");
+
+        
+        //Chama o método tranformaArquivoParaLista
+        listaAlba.tranformaArquivoParaLista(arquivoAlba, listaAlba);
+        listaBosn.tranformaArquivoParaLista(arquivoBosn, listaBosn);
+        listaCroa.tranformaArquivoParaLista(arquivoCroa, listaCroa);
+        listaEngl.tranformaArquivoParaLista(arquivoEngl, listaEngl);
+        listaGerm.tranformaArquivoParaLista(arquivoGerm, listaGerm);
+        listaHung.tranformaArquivoParaLista(arquivoHung, listaHung);
+        listaPoli.tranformaArquivoParaLista(arquivoPoli, listaPoli);
+        listaPort.tranformaArquivoParaLista(arquivoPort, listaPort);
+        listaRuss.tranformaArquivoParaLista(arquivoRuss, listaRuss);
+        listaSerb.tranformaArquivoParaLista(arquivoSerb, listaSerb);
+        listaSlovak.tranformaArquivoParaLista(arquivoSlovak, listaSlovak);
+        listaSlovenian.tranformaArquivoParaLista(arquivoSlovenian, listaSlovenian);
+        listaSpan.tranformaArquivoParaLista(arquivoSpan, listaSpan);
+        listaSwed.tranformaArquivoParaLista(arquivoSwed, listaSwed);
+
+        //Printa o volume de Tweets de cada idioma
+        System.out.println("Volume de Tweets Albania: " + listaAlba.getTamanho());
+        System.out.println("Volume de Tweets Bósnia: " + listaBosn.getTamanho());
+        System.out.println("Volume de Tweets Croácia: " + listaCroa.getTamanho());
+        System.out.println("Volume de Tweets Inglês: " + listaEngl.getTamanho());
+        System.out.println("Volume de Tweets Alemão: " + listaGerm.getTamanho());
+        System.out.println("Volume de Tweets Húngaro: " + listaHung.getTamanho());
+        System.out.println("Volume de Tweets Polonês: " + listaPoli.getTamanho());
+        System.out.println("Volume de Tweets Português: " + listaPort.getTamanho());
+        System.out.println("Volume de Tweets Russo: " + listaRuss.getTamanho());
+        System.out.println("Volume de Tweets Sérvio: " + listaSerb.getTamanho());
+        System.out.println("Volume de Tweets Eslovaco: " + listaSlovak.getTamanho());
+        System.out.println("Volume de Tweets Esloveno: " + listaSlovenian.getTamanho());
+        System.out.println("Volume de Tweets Espanhol: " + listaSpan.getTamanho());
+        System.out.println("Volume de Tweets Sueco: " + listaSwed.getTamanho());
+
+        ListaEncadeada lista = new ListaEncadeada();
+        System.out.println();
+        System.out.println("--------------------Questão 2 e 3-------------------------------");
+        System.out.println();
+        lista.sentimento();
     }
 
 }
