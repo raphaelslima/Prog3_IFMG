@@ -1,0 +1,58 @@
+import java.io.*;
+import java.util.*;
+
+class Principal {
+
+    public static void main(String[] args) {
+
+        List<PostTime> listaPostTime = new ArrayList<>();
+        int hora = 0;
+        int semana = 0;
+        int mes = 0;
+
+        try {
+            BufferedReader leitorLinha = new BufferedReader(new FileReader("./Dataset_Facebook.csv"));
+            String linha = leitorLinha.readLine();
+
+            while (linha != null) {
+                String campos[] = linha.split(";");
+                System.out.println(campos);
+                System.out.println(linha);
+                linha = leitorLinha.readLine();
+                System.out.println(campos[0]);
+                System.out.println(campos[18]);
+
+                if (campos.length >= 3) {
+                    hora = Integer.parseInt(campos[0]);
+                    semana = Integer.parseInt(campos[1]);
+                    mes = Integer.parseInt(campos[2]);
+
+                    System.out.print("coe" + campos[0] + "" + campos[1] + "" + campos[2]);
+                    PostTime listaPT = new PostTime(hora, semana, mes);
+                    listaPostTime.add(listaPT);
+                }
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        PostInfos imprimePost = new PostInfos();
+        imprimePost.imprimeTudo();
+
+        PostLifetime imprimeLifetime = new PostLifetime();
+        imprimeLifetime.imprimeTudo();
+
+        PostTime imprimeTime = new PostTime(hora, semana, mes);
+        imprimeTime.imprimeTudo();
+
+    }
+
+}
+
+
+String[] campos = linha.split(";");
+System.out.println(campos);
+PostInfos postInfos = new PostInfos(likesTotais, qtdeInteracao, tipo, categoria, comentarios,
+        compartilhamentos, ehPago);
