@@ -18,36 +18,12 @@ possível fazer um ranking dos idiomas?
 ## Autores
 
 - Raphael Abade
-- Raphael Souza
+- Raphael Sousa
 - Nathan Siqueira
 - João Pedro
 - Pedro Henrique de Ávila
 - Délio
-
-
 -------------------------------------------------------------------------
-
-## Contribuindo
-
-Contribuições são sempre bem-vindas!
-
-Por favor, siga o `código de conduta` desse projeto.
-
-Contribuições são feitas seguindo o acordado em sala ou por chamada de Discord.
-
-## Deploy
-
-Para fazer o deploy desse projeto rode
-
-```bash
-  npm run deploy
-```
-
-
-## 🔗 Links
-[![portfolio](https://github.com/raphaelslima/Prog3_IFMG)
-
-
 ## Roadmap
 
 Roadmap para o Projeto de Processamento de Tweets
@@ -70,15 +46,29 @@ Roadmap para o Projeto de Processamento de Tweets
 Escolher a linguagem de programação (java).
   Separação de atribuições do projeto:
 
-  - Questão 1: Nathan Siqueira e Délio.
-  - Questão 2: Pedro Ávila, Raphael Abade.
-  - Questão 3: Raphael Abade.
-  Eu, Raphael Abade, fiquei responsável de fazer a questão 3, de verificar qual é a linguagem com maior quantidade de tweets e qual o menor, e se é possível fazer um ranking
-Para isso, eu criei o método sentimento, que lerá os arquivos dentro de um diretorio "./linguagem" (linux), depois lerá linha por linha de arquivo por arquivo.
-Enquanto é lido linha por linha, as variáveis max e min fazem a comparação para ver qual tem mais tweets positivos e qual tem menos. Também reutilizei códigos usado nas aulas de lista para fazer o ranking.
-Como os contadores são diferentes, a lista do mais ao menos positivo está diferente da lista do mais negativo ao menos, então o método printer() duplicará as linguagens, mas retornará "rankeado, mas duplicado"
+  - Criação da classe Nó e ListaEncadeada e Questão 4: Raphael Sousa Lima, Joâo Pedro.
 
-  - Questão 4: Raphael Souza Lima, Joâo Pedro.
+  Como primeiro passo do grupo, Raphael e João criaram as classes "mães" do projeto onde a maioria das outras questões iriam consumir os metódos dessas classes. Então criamos o classe Nó que é referente a cada Twitter dos arquivos e que é equivalente a classe cúlala vista em sala. Além disso, criamos a listaEncadeada onde iria ser a classe que iria criar as listas dos twitters para conseguirmos fazer a manipulação dos dataset. Para o trabalho optamos pelo tipo de lista simples encadeada.
+
+  - Questão 1: Nathan Siqueira e Délio.
+
+  Neste código, manipulamos arquivos CSV que contêm dados de sentimentos do Twitter em diferentes idiomas. Com o objetivo de carregar esses dados em listas específicas para cada idioma e, em seguida, imprimir o volume de tweets processados para cada uma dessas listas. 
+
+  Primeiramente definimos os caminhos para vários arquivos CSV, cada um contendo tweets em diferentes idiomas. Os caminhos dos arquivos são armazenados em variáveis de string. 
+
+  Em seguida, chamamos o método tranformaArquivoParaLista para cada arquivo, que transforma o conteúdo do arquivo CSV em uma lista específica para cada idioma. Este método é chamado para todas as listas definidas, como listaTeste, listaAlba, listaBosn, etc.
+
+  Após carregar os dados, fizemos a impressão do volume de tweets (ou o tamanho da lista) para cada idioma. O método getTamanho é utilizado para obter o número de tweets em cada lista, e esses valores são impressos no console.
+
+  - Questão 2 e 3: Pedro Ávila, Raphael Abade.
+
+  Eu, Raphael Abade e Pedro Avila, ficamos responsáveis de fazer a questão 3, de verificar qual é a linguagem com maior quantidade de tweets e qual o menor, e se é possível fazer um ranking
+
+  Para isso, criamos o método sentimento, que lerá os arquivos dentro de um diretorio "./linguagem" (linux), depois lerá linha por linha de arquivo por arquivo.
+
+  Enquanto é lido linha por linha, as variáveis max e min fazem a comparação para ver qual tem mais tweets positivos e qual tem menos. Também reutilizamos códigos usado nas aulas de lista para fazer o ranking.
+
+  Como os contadores são diferentes, a lista do mais ao menos positivo está diferente da lista do mais negativo ao menos, então o método printer() duplicará as linguagens, mas retornará "rankeado, mas duplicado"
 
 
 ![Logo](https://logodix.com/logo/1002814.png)
