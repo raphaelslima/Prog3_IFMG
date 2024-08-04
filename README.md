@@ -1,8 +1,15 @@
 
 # Segundo Projeto - PROGRAMAÇÃO III
 
-Afim de solucionar o problema em relação a leitura de twites em arquivos csv em 15 idiomas diferentes presentes na europa este projeto foi criado pelos autores do projeto com o intuito de solucionar essa problematica utilizando 
-listas introduzidas nas aulas de programação sendo elas Listas: Simples Encadeada, Simples Encadeada Circular, Duplamente Encadeada e Duplamente Encadeada Circular.
+A fim de solucionar o problema em relação à leitura de tweets em arquivos CSV em 15 idiomas diferentes presentes na Europa, este projeto foi criado pelos autores com o intuito de resolver essa problemática utilizando listas introduzidas nas aulas de programação, sendo elas: Lista Simples Encadeada, Lista Simples Encadeada Circular, Lista Duplamente Encadeada e Lista Duplamente Encadeada Circular.
+
+O nosso  trabalho busca encontrar as possiveis soluções para estes problemas: 
+
+1) Qual o volume de tweets para cada idioma?
+2) Qual o volume total de tweets positivos? E qual o volume total de tweets negativos?
+3) Qual o idioma com mais tweets negativos? Qual o idioma com mais tweets positivos? É
+possível fazer um ranking dos idiomas?
+4) Algum tweeter teve registro em mais de um idioma? Qual, quais e/ou quantos?
 
 
 ## Autores
@@ -23,8 +30,6 @@ listas introduzidas nas aulas de programação sendo elas Listas: Simples Encade
 
 Contribuições são sempre bem-vindas!
 
-Veja `contribuindo.md` para saber como começar.
-
 Por favor, siga o `código de conduta` desse projeto.
 
 Contribuições são feitas seguindo o acordado em sala ou por chamada de Discord.
@@ -39,33 +44,38 @@ Para fazer o deploy desse projeto rode
 
 
 ## 🔗 Links
-[![portfolio](https:)
+[![portfolio](https://github.com/raphaelslima/Prog3_IFMG)
 
 
 ## Aprendizados
 
-O que você aprendeu construindo esse projeto? Quais desafios você enfrentou e como você superou-os?
 
 
 
 ## Roadmap
 
-- Melhorar o suporte de navegadores
+Roadmap para o Projeto de Processamento de Tweets
+- Definição e Planejamento (1-2 semanas)
 
-- Adicionar mais integrações
+      Objetivo do Projeto:
+
+  Ler e processar tweets em 15 idiomas diferentes presentes na Europa partir de arquivos CSV. Utilizar listas encadeadas para armazenar e manipular os dados dos tweets.
+    Escopo e Requisitos:
+  Identificar quais idiomas serão suportados.
+  
+  Definir o formato dos arquivos CSV e os campos que serão utilizados.
+  
+  Estabelecer quais operações serão realizadas com os dados (e.g., inserção, busca, remoção).
+
+- Preparação do Ambiente (1 semana)
+
+    Configuração do Ambiente de Desenvolvimento:
+
+Escolher a linguagem de programação (java).
 
 
-## Suporte
 
-Para suporte, mande um email para fake@fake.com ou entre em nosso canal do Slack.
-
-
-## Licença
-
-[MIT](https://choosealicense.com/licenses/mit/)
-
-
-![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
+![Logo](https://logodix.com/logo/1002814.png)
 
 
 
