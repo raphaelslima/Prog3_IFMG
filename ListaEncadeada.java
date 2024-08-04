@@ -47,18 +47,18 @@ public class ListaEncadeada<T> {
     public void percorreLista(){
         if(this.tamanho == 0){
             System.out.println("[]");
-        }
+        } else{
+            No<T> atual = this.inicio;
 
-        No<T> atual = this.inicio;
-
-        if(atual.getProximo() == null){
-            System.out.println(atual.getTweetID());
-        }else{
-            for(int i = 0; i<this.tamanho; i++){
+            if(atual.getProximo() == null){
                 System.out.println(atual.getTweetID());
-                atual = atual.getProximo();
-            }
-        }      
+            }else{
+                for(int i = 0; i<this.tamanho; i++){
+                    System.out.println(atual.getTweetID());
+                    atual = atual.getProximo();
+                }
+            } 
+        }             
     }
 
     public void limpa(){
