@@ -71,12 +71,40 @@ Escolher a linguagem de programação (java).
   Separação de atribuições do projeto:
 
   - Questão 1: Nathan Siqueira e Délio.
+
+    Neste código, manipulamos arquivos CSV que contêm dados de sentimentos do Twitter em diferentes idiomas. Com o objetivo de carregar esses dados em listas específicas para cada idioma e, em seguida, imprimir o volume de tweets processados para cada uma dessas listas. 
+
+Primeiramente definimos os caminhos para vários arquivos CSV, cada um contendo tweets em diferentes idiomas. Os caminhos dos arquivos são armazenados em variáveis de string. 
+
+Em seguida, chamamos o método tranformaArquivoParaLista para cada arquivo, que transforma o conteúdo do arquivo CSV em uma lista específica para cada idioma. Este método é chamado para todas as listas definidas, como listaTeste, listaAlba, listaBosn, etc.
+
+Após carregar os dados, fizemos a impressão do volume de tweets (ou o tamanho da lista) para cada idioma. O método getTamanho é utilizado para obter o número de tweets em cada lista, e esses valores são impressos no console.
+
+    ## RESPOSTA DA QUESTÃO: ##
+
+  Volume de Tweets Albania: 53005
+  Volume de Tweets Bósnia: 44583
+  Volume de Tweets Croácia: 97291
+  Volume de Tweets Inglês: 103034
+  Volume de Tweets Alemão: 109130
+  Volume de Tweets Húngaro: 68505
+  Volume de Tweets Polonês: 223574
+  Volume de Tweets Português: 157393
+  Volume de Tweets Russo: 107773
+  Volume de Tweets Sérvio: 73783
+  Volume de Tweets Eslovaco: 70425
+  Volume de Tweets Esloveno: 133935
+  Volume de Tweets Espanhol: 275588
+  Volume de Tweets Sueco: 58547
+
   - Questão 2: Pedro Ávila, Raphael Abade.
+  
   - Questão 3: Raphael Abade.
+
   Eu, Raphael Abade, fiquei responsável de fazer a questão 3, de verificar qual é a linguagem com maior quantidade de tweets e qual o menor, e se é possível fazer um ranking
 Para isso, eu criei o método sentimento, que lerá os arquivos dentro de um diretorio "./linguagem" (linux), depois lerá linha por linha de arquivo por arquivo.
-Enquanto é lido linha por linha, as variáveis max e min fazem a comparação para ver qual tem mais tweets positivos e qual tem menos. Também reutilizei códigos usado nas aulas de lista para fazer o ranking.
-Como os contadores são diferentes, a lista do mais ao menos positivo está diferente da lista do mais negativo ao menos, então o método printer() duplicará as linguagens, mas retornará "rankeado, mas duplicado"
+
+  Enquanto é lido linha por linha, as variáveis max e min fazem a comparação para ver qual tem mais tweets positivos e qual tem menos. Também reutilizei códigos usado nas aulas de lista para fazer o ranking. Como os contadores são diferentes, a lista do mais ao menos positivo está diferente da lista do mais negativo ao menos, então o método printer() duplicará as linguagens, mas retornará "rankeado, mas duplicado"
 
   - Questão 4: Raphael Souza Lima, Joâo Pedro.
 
