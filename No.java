@@ -44,4 +44,10 @@ public class No<String> {
         this.proximo = proximo;
     }
 
+<<<<<<< HEAD
 }
+=======
+    
+}
+
+>>>>>>> refs/remotes/origin/main
