@@ -21,7 +21,7 @@ possível fazer um ranking dos idiomas?
 - Raphael Souza
 - João Pedro
 - Pedro Henrique de Ávila
-- Celio
+- Délio
 
 -------------------------------------------------------------------------
 
@@ -46,11 +46,6 @@ Para fazer o deploy desse projeto rode
 [![portfolio](https://github.com/raphaelslima/Prog3_IFMG)
 
 
-## Aprendizados
-
-
-
-
 ## Roadmap
 
 Roadmap para o Projeto de Processamento de Tweets
@@ -71,7 +66,12 @@ Roadmap para o Projeto de Processamento de Tweets
     Configuração do Ambiente de Desenvolvimento:
 
 Escolher a linguagem de programação (java).
+  Separação de atribuições do projeto:
 
+  - Questão 1: Nathan Siqueira e Délio.
+  - Questão 2: Pedro Ávila, Raphael Abade.
+  - Questão 3: Raphael Abade.
+  - Questão 4: Raphael Souza Lima, Joâo Pedro.
 
 
 ![Logo](https://logodix.com/logo/1002814.png)
