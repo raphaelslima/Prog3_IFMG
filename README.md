@@ -71,6 +71,11 @@ Escolher a linguagem de programação (java).
   - Questão 1: Nathan Siqueira e Délio.
   - Questão 2: Pedro Ávila, Raphael Abade.
   - Questão 3: Raphael Abade.
+  Eu, Raphael Abade, fiquei responsável de fazer a questão 3, de verificar qual é a linguagem com maior quantidade de tweets e qual o menor, e se é possível fazer um ranking
+Para isso, eu criei o método sentimento, que lerá os arquivos dentro de um diretorio "./linguagem" (linux), depois lerá linha por linha de arquivo por arquivo.
+Enquanto é lido linha por linha, as variáveis max e min fazem a comparação para ver qual tem mais tweets positivos e qual tem menos. Também reutilizei códigos usado nas aulas de lista para fazer o ranking.
+Como os contadores são diferentes, a lista do mais ao menos positivo está diferente da lista do mais negativo ao menos, então o método printer() duplicará as linguagens, mas retornará "rankeado, mas duplicado"
+
   - Questão 4: Raphael Souza Lima, Joâo Pedro.
 
 
