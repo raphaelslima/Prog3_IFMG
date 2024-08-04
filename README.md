@@ -19,9 +19,11 @@ possível fazer um ranking dos idiomas?
 
 - Raphael Abade
 - Raphael Souza
+- Nathan Siqueira
 - João Pedro
 - Pedro Henrique de Ávila
 - Délio
+
 
 -------------------------------------------------------------------------
 
