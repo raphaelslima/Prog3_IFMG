@@ -7,7 +7,7 @@ public class PostInfos {
     private String compartilhamentos;
     private boolean ehPago;
 
-    public void Post(long likesTotais, long qtdeInteracao, String tipo, String categoria, String comentarios,
+    public void PostInfos(long likesTotais, long qtdeInteracao, String tipo, String categoria, String comentarios,
             String compartilhamentos, boolean ehPago) {
         this.likesTotais = likesTotais;
         this.qtdeInteracao = qtdeInteracao;
@@ -30,7 +30,7 @@ public class PostInfos {
         return qtdeInteracao;
     }
 
-    public void setInteracao(long qtdeInteracao) {
+    public void setQInteracao(long qtdeInteracao) {
         this.qtdeInteracao = qtdeInteracao;
     }
 
@@ -42,7 +42,7 @@ public class PostInfos {
         this.tipo = tipo;
     }
 
-    public String categoria() {
+    public String getcategoria() {
         return categoria;
     }
 
@@ -59,10 +59,10 @@ public class PostInfos {
     }
 
     public String compartilhamentos() {
-        return comentarios;
+        return compartilhamentos;
     }
 
-    public void setCompartilhamentos(String comentarios) {
+    public void setCompartilhamentos(String compartilhamentos) {
         this.compartilhamentos = compartilhamentos;
     }
 
