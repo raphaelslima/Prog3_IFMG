@@ -1,4 +1,3 @@
-import javax.tools.ToolProvider;
 
 public class PostLifetime {
     long totalAlcance;
@@ -10,7 +9,7 @@ public class PostLifetime {
     long alcancePorLike;
     long engajadosLike;
 
-    public void Lifetime(long totalAlcance, long totalImpressoes, long engajadosUsuarios, long clientes, long consumo,
+    public void PostLifetime (long totalAlcance, long totalImpressoes, long engajadosUsuarios, long clientes, long consumo,
             long impressoesPorLike, long alcancePorLike, long engajadosLike) {
         this.totalAlcance = totalAlcance;
         this.totalImpressoes = totalImpressoes;
